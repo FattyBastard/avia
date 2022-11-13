@@ -6,31 +6,26 @@
   border-radius: 15px;
   display: flex;
 }
-
 .avia-list-item-left {
   flex: 1;
 }
-
 .avia-list-item {
   display: flex;
 }
-
 .border-dashed {
   border-top: 1px dashed #5c87db;
 }
-
 .avia-list-company {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   p {
-    margin-top: 8px;
-    margin-bottom: 41px;
-    font-style: normal;
-    font-weight: 400;
     font-size: 18px;
     line-height: 21px;
+    font-style: normal;
+    margin-top: 8px;
+    margin-bottom: 41px;
+    font-weight: 400;
   }
 }
 .avia-type {
@@ -75,7 +70,6 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
-
   color: #5c5c5c;
 }
 .date {
@@ -83,7 +77,6 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
-
   color: #5c5c5c;
 }
 .duration-scheme {
@@ -105,40 +98,6 @@
   display: flex;
   margin-bottom: 27px;
 }
-.avia-time-button {
-  padding: 10px 18px 9px 15px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  color: #5c5c5c;
-  background: #ffffff;
-  border: 1px solid #b7bac1;
-  border-radius: 10px;
-  cursor: pointer;
-
-  &:not(:last-child) {
-    margin-right: 20px;
-  }
-
-  &:hover {
-    background: #dde3ee;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    color: #232323;
-  }
-}
-.active {
-  background: #dde3ee;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  color: #232323;
-}
-
 .avia-price {
   font-style: normal;
   font-weight: 700;
