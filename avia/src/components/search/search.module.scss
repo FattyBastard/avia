@@ -61,5 +61,18 @@
   border-radius: 10px;
   padding: 10px 32px;
   border: 1px solid transparent;
+  transition: background 0.2s ease-in-out;
   cursor: pointer;
+
+  &:hover {
+    background: #4274d7;
+  }
+}
+
+.disabled {
+  color: white;
+  background: #bababa;
+  border-radius: 10px;
+  padding: 10px 32px;
+  border: 1px solid transparent;
 }

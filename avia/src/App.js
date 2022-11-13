@@ -11,6 +11,12 @@ function App() {
   const [cityTo, setCityTo] = React.useState('');
   const [dataFrom, setDataFrom] = React.useState('');
   const [dataTo, setDataTo] = React.useState('');
+  const [formValid, setFormValid] = React.useState(false);
+
+  const [validCityTo, setValidCityTo] = React.useState(false);
+  const [validCityFrom, setValidCityFrom] = React.useState(false);
+  const [validDataTo, setValidDataTo] = React.useState(false);
+  const [validDataFrom, setValidDataFrom] = React.useState(false);
 
   return (
     <AppContext.Provider
@@ -23,6 +29,16 @@ function App() {
         setDataFrom,
         dataTo,
         setDataTo,
+        formValid,
+        setFormValid,
+        validCityTo,
+        setValidCityTo,
+        validCityFrom,
+        setValidCityFrom,
+        validDataTo,
+        setValidDataTo,
+        validDataFrom,
+        setValidDataFrom,
       }}>
       <Routes>
         <Route exct path="/" element={<Navigate to="/avia" />} />

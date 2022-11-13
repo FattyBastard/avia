@@ -2,10 +2,63 @@ import React from 'react';
 import styles from './search.module.scss';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../App';
+import { useEffect } from 'react';
 
 export function Search() {
-  const { cityFrom, setCityFrom, cityTo, setCityTo, dataFrom, setDataFrom, dataTo, setDataTo } =
-    React.useContext(AppContext);
+  const {
+    cityFrom,
+    setCityFrom,
+    cityTo,
+    setCityTo,
+    dataFrom,
+    setDataFrom,
+    dataTo,
+    setDataTo,
+    formValid,
+    setFormValid,
+    validCityTo,
+    setValidCityTo,
+    validCityFrom,
+    setValidCityFrom,
+    validDataFrom,
+    setValidDataFrom,
+  } = React.useContext(AppContext);
+
+  const validateCityTo = (event) => {
+    setCityTo(event.target.value);
+    if (event.target.value.match(/^[a-zA-Z\u0400-\u04FF]+$/)) {
+      setValidCityTo(true);
+    } else {
+      setValidCityTo(false);
+    }
+  };
+
+  const validateCityFrom = (event) => {
+    setCityFrom(event.target.value);
+    if (event.target.value.match(/^[a-zA-Z\u0400-\u04FF]+$/)) {
+      setValidCityFrom(true);
+    } else {
+      setValidCityFrom(false);
+    }
+  };
+
+  const validateDataFrom = (event) => {
+    setDataFrom(event.target.value);
+    if (event.target.value.match(/^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.]\d\d$/)) {
+      setValidDataFrom(true);
+    } else {
+      setValidDataFrom(false);
+    }
+  };
+
+  React.useEffect(() => {
+    if (validCityFrom && validCityTo && validDataFrom) {
+      setFormValid(true);
+    } else {
+      setFormValid(false);
+    }
+  }, [cityFrom, cityTo, dataFrom]);
+
   return (
     <div className={styles['search-box']}>
       <div className={styles['search-upper-part']}>
@@ -15,7 +68,7 @@ export function Search() {
             <div className={styles['search-field-input']}>
               <input
                 onChange={(event) => {
-                  setCityFrom(event.target.value);
+                  validateCityFrom(event);
                 }}
                 value={cityFrom}
                 type="text"
@@ -28,7 +81,7 @@ export function Search() {
             <div className={styles['search-field-input']}>
               <input
                 onChange={(event) => {
-                  setCityTo(event.target.value);
+                  validateCityTo(event);
                 }}
                 value={cityTo}
                 type="text"
@@ -72,7 +125,7 @@ export function Search() {
               </svg>
               <input
                 onChange={(event) => {
-                  setDataFrom(event.target.value);
+                  validateDataFrom(event);
                 }}
                 value={dataFrom}
                 type="text"
@@ -128,7 +181,11 @@ export function Search() {
       </div>
       <div className={styles['search-bottom-part']}>
         <Link to="/avia/info">
-          <button className={styles['search-button']}>Найти билеты</button>
+          <button
+            disabled={!formValid}
+            className={formValid ? styles['search-button'] : styles['disabled']}>
+            Найти билеты
+          </button>
         </Link>
       </div>
     </div>
