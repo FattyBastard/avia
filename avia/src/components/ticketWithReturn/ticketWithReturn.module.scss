@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  //   margin-right: 25px;
+
   p {
     margin-top: 8px;
     margin-bottom: 41px;
@@ -62,14 +62,14 @@
   margin-right: 31px;
   padding-left: 29px;
 }
-.time-from {
+.time {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   color: #232323;
 }
-.city-from {
+.city {
   margin-top: 8px;
   font-style: normal;
   font-weight: 600;
@@ -78,7 +78,7 @@
 
   color: #5c5c5c;
 }
-.date-from {
+.date {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -100,30 +100,6 @@
 }
 .avia-options-to {
   margin-right: 33px;
-}
-.time-to {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
-  color: #232323;
-}
-.city-to {
-  margin-top: 8px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-
-  color: #5c5c5c;
-}
-.date-to {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-
-  color: #5c5c5c;
 }
 .avia-time-options {
   display: flex;
