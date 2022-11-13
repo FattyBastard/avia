@@ -60,7 +60,8 @@ export const OneWayTicket: React.FC = () => {
                       ? `${styles['avia-time-button']} ${styles['active']}`
                       : `${styles['avia-time-button']}`
                   }>
-                  {time}
+                  {<span>{time.slice(0, time.indexOf('-'))}</span>}
+                  {time.slice(time.indexOf('-'), time.length)}
                 </li>
               );
             })}

@@ -121,6 +121,9 @@
   border: 1px solid #b7bac1;
   border-radius: 10px;
   cursor: pointer;
+  span {
+    font-size: 22px;
+  }
 
   &:not(:last-child) {
     margin-right: 20px;
