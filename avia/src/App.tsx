@@ -4,6 +4,7 @@ import { Search } from './components/search/search';
 import { Tickets } from './components/tickets/tickets';
 import React from 'react';
 
+console.log(process.env.PATH);
 interface IAppContext {
   cityFrom: string;
   CityFromHandler: (string: string) => void;
