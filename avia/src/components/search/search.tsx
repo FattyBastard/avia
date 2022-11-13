@@ -4,58 +4,58 @@ import { Link } from 'react-router-dom';
 import { AppContext } from '../../App';
 import { useEffect } from 'react';
 
-export function Search() {
+export const Search: React.FC = () => {
   const {
     cityFrom,
-    setCityFrom,
+    CityFromHandler,
     cityTo,
-    setCityTo,
+    CityToHandler,
     dataFrom,
-    setDataFrom,
+    DataFromHandler,
     dataTo,
-    setDataTo,
+    DataToHandler,
     formValid,
-    setFormValid,
+    FormValidHandler,
     validCityTo,
-    setValidCityTo,
+    ValidCityToHandler,
     validCityFrom,
-    setValidCityFrom,
+    ValidCityFromHandler,
     validDataFrom,
-    setValidDataFrom,
+    ValidDataFromHandler,
   } = React.useContext(AppContext);
 
-  const validateCityTo = (event) => {
-    setCityTo(event.target.value);
+  const validateCityTo = (event: React.ChangeEvent<HTMLInputElement>) => {
+    CityToHandler(event.target.value);
     if (event.target.value.match(/^[a-zA-Z\u0400-\u04FF]+$/)) {
-      setValidCityTo(true);
+      ValidCityToHandler(true);
     } else {
-      setValidCityTo(false);
+      ValidCityToHandler(false);
     }
   };
 
-  const validateCityFrom = (event) => {
-    setCityFrom(event.target.value);
+  const validateCityFrom = (event: React.ChangeEvent<HTMLInputElement>) => {
+    CityFromHandler(event.target.value);
     if (event.target.value.match(/^[a-zA-Z\u0400-\u04FF]+$/)) {
-      setValidCityFrom(true);
+      ValidCityFromHandler(true);
     } else {
-      setValidCityFrom(false);
+      ValidCityFromHandler(false);
     }
   };
 
-  const validateDataFrom = (event) => {
-    setDataFrom(event.target.value);
+  const validateDataFrom = (event: React.ChangeEvent<HTMLInputElement>) => {
+    DataFromHandler(event.target.value);
     if (event.target.value.match(/^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.]\d\d$/)) {
-      setValidDataFrom(true);
+      ValidDataFromHandler(true);
     } else {
-      setValidDataFrom(false);
+      ValidDataFromHandler(false);
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (validCityFrom && validCityTo && validDataFrom) {
-      setFormValid(true);
+      FormValidHandler(true);
     } else {
-      setFormValid(false);
+      FormValidHandler(false);
     }
   }, [cityFrom, cityTo, dataFrom]);
 
@@ -64,7 +64,7 @@ export function Search() {
       <div className={styles['search-upper-part']}>
         <ul className={styles['search-fields']}>
           <li className={styles['search-field-item']}>
-            <p htmlFor="">Откуда</p>
+            <p>Откуда</p>
             <div className={styles['search-field-input']}>
               <input
                 onChange={(event) => {
@@ -77,7 +77,7 @@ export function Search() {
             </div>
           </li>
           <li className={styles['search-field-item']}>
-            <p htmlFor="">Куда</p>
+            <p>Куда</p>
             <div className={styles['search-field-input']}>
               <input
                 onChange={(event) => {
@@ -90,7 +90,7 @@ export function Search() {
             </div>
           </li>
           <li className={styles['search-field-item']}>
-            <p htmlFor="">Туда</p>
+            <p>Туда</p>
             <div className={styles['search-field-input']}>
               <svg
                 className={styles['calendar']}
@@ -134,7 +134,7 @@ export function Search() {
             </div>
           </li>
           <li className={styles['search-field-item']}>
-            <p htmlFor="">Обратно</p>
+            <p>Обратно</p>
             <div className={styles['search-field-input']}>
               <svg
                 className={styles['calendar']}
@@ -169,7 +169,7 @@ export function Search() {
               </svg>
               <input
                 onChange={(event) => {
-                  setDataTo(event.target.value);
+                  DataToHandler(event.target.value);
                 }}
                 value={dataTo}
                 type="text"
@@ -190,4 +190,4 @@ export function Search() {
       </div>
     </div>
   );
-}
+};

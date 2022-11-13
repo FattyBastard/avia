@@ -2,13 +2,13 @@ import React from 'react';
 import { AppContext } from '../../App';
 import styles from './oneWayTicket.module.scss';
 
-export function OneWayTicket() {
+export const OneWayTicket: React.FC = () => {
   const { cityFrom, cityTo, dataFrom } = React.useContext(AppContext);
 
   const times = ['09:20-11:05', '10:20-12:05', '11:20-13:00'];
-  const [activeTime, setActiveTime] = React.useState(0);
+  const [activeTime, setActiveTime] = React.useState<number>(0);
 
-  const onClickTime = (id) => {
+  const onClickTime = (id: number) => {
     setActiveTime(id);
   };
   return (
@@ -70,4 +70,4 @@ export function OneWayTicket() {
       </div>
     </>
   );
-}
+};
