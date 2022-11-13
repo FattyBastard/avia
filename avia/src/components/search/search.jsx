@@ -1,5 +1,5 @@
 import React from 'react';
-import './search.scss';
+import styles from './search.module.scss';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../App';
 
@@ -7,12 +7,12 @@ export function Search() {
   const { cityFrom, setCityFrom, cityTo, setCityTo, dataFrom, setDataFrom, dataTo, setDataTo } =
     React.useContext(AppContext);
   return (
-    <div className="search-box">
-      <div className="search-upper-part">
-        <ul className="search-fields">
-          <li className="search-field-item">
+    <div className={styles['search-box']}>
+      <div className={styles['search-upper-part']}>
+        <ul className={styles['search-fields']}>
+          <li className={styles['search-field-item']}>
             <p htmlFor="">Откуда</p>
-            <div className="search-field-input">
+            <div className={styles['search-field-input']}>
               <input
                 onChange={(event) => {
                   setCityFrom(event.target.value);
@@ -23,9 +23,9 @@ export function Search() {
               />
             </div>
           </li>
-          <li className="search-field-item">
+          <li className={styles['search-field-item']}>
             <p htmlFor="">Куда</p>
-            <div className="search-field-input">
+            <div className={styles['search-field-input']}>
               <input
                 onChange={(event) => {
                   setCityTo(event.target.value);
@@ -36,11 +36,11 @@ export function Search() {
               />
             </div>
           </li>
-          <li className="search-field-item">
+          <li className={styles['search-field-item']}>
             <p htmlFor="">Туда</p>
-            <div className="search-field-input">
+            <div className={styles['search-field-input']}>
               <svg
-                className="calendar"
+                className={styles['calendar']}
                 width="16"
                 height="16"
                 viewBox="0 0 16 16"
@@ -80,11 +80,11 @@ export function Search() {
               />
             </div>
           </li>
-          <li className="search-field-item">
+          <li className={styles['search-field-item']}>
             <p htmlFor="">Обратно</p>
-            <div className="search-field-input">
+            <div className={styles['search-field-input']}>
               <svg
-                className="calendar"
+                className={styles['calendar']}
                 width="16"
                 height="16"
                 viewBox="0 0 16 16"
@@ -126,9 +126,9 @@ export function Search() {
           </li>
         </ul>
       </div>
-      <div className="search-bottom-part">
+      <div className={styles['search-bottom-part']}>
         <Link to="/avia/info">
-          <button className="search-button">Найти билеты</button>
+          <button className={styles['search-button']}>Найти билеты</button>
         </Link>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import './App.scss';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Search } from './components/search/search';
-import { Info } from './components/info/info';
+import { Info } from './components/tickets/tickets';
 import React from 'react';
 
 export const AppContext = React.createContext({});
