@@ -26,10 +26,18 @@
   }
 }
 .search-field-input {
-  .calendar {
+  svg {
     margin-right: 8px;
     transform: translateY(3px);
+
+    &:hover {
+      cursor: pointer;
+      g path {
+        fill: #5c87db;
+      }
+    }
   }
+
   border: 1px solid transparent;
   background: white;
   border-radius: 10px;
