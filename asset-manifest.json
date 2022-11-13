@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/avia/static/css/main.b3b19d50.css",
-    "main.js": "/avia/static/js/main.3edc3633.js",
+    "main.css": "/avia/static/css/main.156164e7.css",
+    "main.js": "/avia/static/js/main.7dc972d4.js",
     "index.html": "/avia/index.html",
-    "main.b3b19d50.css.map": "/avia/static/css/main.b3b19d50.css.map",
-    "main.3edc3633.js.map": "/avia/static/js/main.3edc3633.js.map"
+    "main.156164e7.css.map": "/avia/static/css/main.156164e7.css.map",
+    "main.7dc972d4.js.map": "/avia/static/js/main.7dc972d4.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3b19d50.css",
-    "static/js/main.3edc3633.js"
+    "static/css/main.156164e7.css",
+    "static/js/main.7dc972d4.js"
   ]
 }
