@@ -1,3 +1,20 @@
+@mixin active-button {
+  border: 1px solid transparent;
+  background: #dde3ee;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #232323;
+  scale: 1.1;
+}
+
+@mixin common-font {
+  font-style: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+
 .avia-list-item {
   background: #ffffff;
   margin: 71px auto;
@@ -13,12 +30,10 @@
   align-items: center;
 
   p {
+    @include common-font;
     margin-top: 8px;
     margin-bottom: 41px;
-    font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
   }
 }
 .avia-type {
@@ -52,34 +67,9 @@
   padding-left: 29px;
   flex: 1;
 }
-.time-from {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
-  color: #232323;
-}
-.city-from {
-  margin-top: 8px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-
-  color: #5c5c5c;
-}
-.date-from {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-
-  color: #5c5c5c;
-}
 .duration-scheme {
   margin-right: 28px;
   margin-bottom: 30px;
-  // flex: 1;
 }
 .duration {
   text-align: center;
@@ -93,14 +83,14 @@
   margin-right: 33px;
   flex: 1;
 }
-.time-to {
+.time {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   color: #232323;
 }
-.city-to {
+.city {
   margin-top: 8px;
   font-style: normal;
   font-weight: 600;
@@ -109,7 +99,7 @@
 
   color: #5c5c5c;
 }
-.date-to {
+.date {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -123,11 +113,9 @@
   margin-left: 30px;
 }
 .avia-time-button {
+  @include common-font;
   padding: 10px 18px 9px 15px;
-  font-style: normal;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
   color: #5c5c5c;
   background: #ffffff;
   border: 1px solid #b7bac1;
@@ -139,21 +127,13 @@
   }
 
   &:hover {
-    background: #dde3ee;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    color: #232323;
+    transition: all 0.1s ease-in-out;
+    @include active-button;
   }
 }
 .active {
-  background: #dde3ee;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  color: #232323;
+  transition: all 0.1s ease-in-out;
+  @include active-button;
 }
 
 .avia-price {

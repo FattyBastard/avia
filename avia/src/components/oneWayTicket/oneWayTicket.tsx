@@ -22,25 +22,25 @@ export const OneWayTicket: React.FC = () => {
         <div className={styles['avia-main-part']}>
           <div className={styles['avia-list-duration']}>
             <div className={styles['avia-options-from']}>
-              <p className={styles['time-from']}>
+              <p className={styles['time']}>
                 {times[activeTime].slice(0, times[activeTime].indexOf('-'))}
               </p>
-              <p className={styles['city-from']}>{cityFrom}</p>
-              <p className={styles['data-from']}>{dataFrom}</p>
+              <p className={styles['city']}>{cityFrom}</p>
+              <p className={styles['date']}>{dataFrom}</p>
             </div>
             <div className={styles['duration-scheme']}>
               <img src={process.env.PUBLIC_URL + '/img/trip.svg'} alt="trip" />
               <p className={styles['duration']}>В пути 1ч 55 мин</p>
             </div>
             <div className={styles['avia-options-to']}>
-              <p className={styles['time-to']}>
+              <p className={styles['time']}>
                 {times[activeTime].slice(
                   times[activeTime].indexOf('-') + 1,
                   times[activeTime].length,
                 )}
               </p>
-              <p className={styles['city-to']}>{cityTo}</p>
-              <p className={styles['date-to']}>{dataFrom}</p>
+              <p className={styles['city']}>{cityTo}</p>
+              <p className={styles['date']}>{dataFrom}</p>
             </div>
             <img
               src={process.env.PUBLIC_URL + '/img/bagage.png'}
