@@ -1,7 +1,7 @@
 import './App.scss';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Search } from './components/search/search';
-import { Info } from './components/tickets/tickets';
+import { Tickets } from './components/tickets/tickets';
 import React from 'react';
 
 interface IAppContext {
@@ -121,7 +121,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/avia" />} />
         <Route path="/avia" element={<Search />} />
-        <Route path="/avia/info" element={<Info />} />
+        <Route path="/avia/info" element={<Tickets />} />
       </Routes>
     </AppContext.Provider>
   );
