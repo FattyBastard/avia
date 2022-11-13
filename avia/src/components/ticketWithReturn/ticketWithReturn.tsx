@@ -2,7 +2,7 @@ import React from 'react';
 import { AppContext } from '../../App';
 import styles from './ticketWithReturn.module.scss';
 
-export function TicketWithReturn() {
+export const TicketWithReturn: React.FC = () => {
   const { cityFrom, cityTo, dataFrom, dataTo } = React.useContext(AppContext);
 
   return (
@@ -87,4 +87,4 @@ export function TicketWithReturn() {
       </div>
     </>
   );
-}
+};
